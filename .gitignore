@@ -1,0 +1,36 @@
+# Local data and settings
+runtime/
+private/
+work/
+tmp/
+local/
+.env
+.env.*
+*.log
+*.ndjson
+*.local.json
+
+# Captures and generated files
+captures/
+backups/
+build/
+bin/
+obj/
+node_modules/
+*.exe
+*.dll
+*.pdb
+*.hex
+*.elf
+*.eep
+*.apk
+*.zip
+
+# Signing material and editor state
+*.pfx
+*.p12
+*.pem
+.vs/
+.vscode/
+Thumbs.db
+Desktop.ini
