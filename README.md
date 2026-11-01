@@ -4,18 +4,23 @@ An experimental defensive security prototype that connects decoy detection, Ardu
 
 On November 1, 2026, integration tests covered six simulated detection categories, from automatic notification to the receiver's latched cutoff state and saved reports.
 
-![Hardware prototype with a LAN switch, Arduino boards, an optical interface, and a phone displaying the relay-control app](assets/hardware-prototype.jpg)
+![Hardware prototype with a LAN switch, Arduino boards, an optical interface, and a phone displaying the relay-control app](hardware-prototype.jpg)
 
 *Hardware prototype on the test bench. The phone shows the earlier relay-control interface; the integration results below use the Windows receiver application.*
 
 ## How it works
 
-```mermaid
-flowchart LR
-    D[Decoys and detection] --> T[Arduino transmitter]
-    T -->|One-way optical signaling| R[Arduino receiver]
-    R --> H[LAN switch power control]
-    R --> W[Windows event logger on a separate PC]
+```text
+Decoys and detection
+        |
+Arduino transmitter
+        |
+One-way optical signaling
+        |
+Arduino receiver
+        |--------------------|
+LAN switch power control   Windows event logger
+                            on a separate PC
 ```
 
 The decoy host sends emergency notifications and compact, fixed-format reports through an optical path. The receiver controls power to the LAN switch and passes events to a separate PC for logging. Reporting continues while the receiver holds the cutoff state.
@@ -39,12 +44,12 @@ The decoy host sends emergency notifications and compact, fixed-format reports t
 | Optical emergency reception | Six new emergency events recorded by the receiver |
 | Receiver state and reporting | Cutoff state remained latched; 53 reports across six categories were recorded in the evaluated period |
 
-These results combine transmitter-side test records with a receiver-log summary supplied from the separate PC. They describe the tested experimental setup. See the [validation summary](docs/validation.md) for the evidence scope.
+These results combine transmitter-side test records with a receiver-log summary supplied from the separate PC. They describe the tested experimental setup. See the [validation summary](VALIDATION.md) for the evidence scope.
 
 ## Documentation
 
-- [System overview](docs/architecture.md)
-- [Validation summary](docs/validation.md)
-- [Project summary](docs/project-summary.md)
+- [System overview](SYSTEM_OVERVIEW.md)
+- [Validation summary](VALIDATION.md)
+- [Project summary](PROJECT_SUMMARY.md)
 
 This repository presents the project overview, a hardware photograph, and verified experimental results.
